@@ -1,0 +1,95 @@
+.chat{
+    // background-color: rgb(114, 231, 231);
+    height: 50%;
+    overflow: auto;
+    margin-top: 40px;
+    // display: inline-block !important;
+}
+
+.message{
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 4px;
+    white-space: pre-wrap;
+    background: rgb(27, 132, 202);
+}
+
+.message-input{
+    width: 100%;
+    border: 1px solid var(--ion-color-medium);
+    border-radius: 6px;
+    background: var(--ion-color-tertiary);
+    resize: none;
+    margin-top: 10px;
+    --padding-start:8x;
+}
+
+// otro mensaje
+.other-message{
+    background: var(--ion-color-secondary);
+    color:#fff;
+    width: 400px !important;
+    margin-bottom: 10px;
+    display: inline-block;
+    border-radius: 3px;
+}
+
+.time{
+    // color: #dfdfdf;
+    float: left;
+    font-size: small;
+}
+
+// mi mensaje
+.my-message{
+    background: var(--ion-color-tertiary);
+    // color: #fff;
+    margin-left: 10%;
+    width: 400px !important;
+    margin-bottom: 10px;
+    // background-color: red;
+    display: inline-block;
+    border-radius: 3px;
+}
+
+ 
+
+.my-time{
+    float: left;
+    font-size:small;
+}
+
+.my-btns{
+    float: right;
+}
+
+
+
+
+.btns ion-icon{
+    cursor: pointer;
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    // background-color: aqua;
+}
+
+
+.foter{
+    background: rgb(27, 132, 202);
+}
+
+.logout{
+    margin-top: 60px;
+    // background-color: rgb(209, 209, 209);
+    border: 1px solid #fff;
+    height: 70%;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.logout ion-col{
+    margin-left: 10%;
+}

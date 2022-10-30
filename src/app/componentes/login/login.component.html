@@ -1,0 +1,62 @@
+<form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <ion-item class="form-group">
+        <ion-input
+            placeholder="ingrese su email"
+            autofocus="true"
+            clearInput="true"
+            formControlName="email"
+            type="email"
+            class="form-control">
+        </ion-input>
+    </ion-item>
+    <ion-item class="form-group">
+        <ion-input
+            placeholder="ingrese su password"
+            autofocus="true"
+            clearInput="true"
+            type="password"
+            formControlName="password"
+            class="form-control">
+        </ion-input>
+    </ion-item>
+    <br>
+    <ion-button type="submit">Aceptar</ion-button>
+</form>
+ 
+<div class="form-group mt-3">
+    <p>Crea una cuenta <a routerLink="/registro">Registrar</a></p>
+</div>
+
+
+
+
+
+
+
+<!-- <div class="row">
+  <div class="col-md 6 mx-auto mt-5">
+      <div class="card">
+          <div class="card-body">
+              <h1 class="text-center">LOGIN</h1>
+              <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                  <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="email" class="form-control"
+                      placeholder="ingrese su email"
+                      formControlName="email">
+                  </div>
+                  <div class="form-group">
+                      <label for="password">Password</label>
+                      <input type="password" class="form-control"
+                      placeholder="ingrese su password"
+                      formControlName="password">
+                  </div><br>
+                  <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+              </form>
+              <div class="form-group mt-3">
+                  <p>Crea una cuenta <a routerLink="/registro">Registrar</a></p>
+              </div>
+          </div>
+      </div>
+  </div>
+</div> -->

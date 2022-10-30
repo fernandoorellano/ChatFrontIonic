@@ -1,0 +1,32 @@
+<form (ngSubmit)="onRegister()">
+    <ion-item class="form-group">
+        <ion-input
+            placeholder="ingrese su Email"
+            autofocus="true"
+            clearInput="true"
+            type="email" 
+            class="form-control"
+            [(ngModel)]="usuario.email" [ngModelOptions]="{standalone: true}"
+            >
+        </ion-input>
+    </ion-item>
+    <ion-item class="form-group">
+        <ion-input
+            placeholder="ingrese su password"
+            autofocus="true"
+            clearInput="true"
+            type="password" 
+            class="form-control"
+            [(ngModel)]="usuario.pass" [ngModelOptions]="{standalone: true}"
+            >
+        </ion-input>
+    </ion-item>
+    <br>
+    <ion-button type="submit">
+        Aceptar
+    </ion-button>
+</form>
+
+<div class="form-group mt-3">
+  <p>Ya tenes una cuenta? <a routerLink="/login">logeate</a></p>
+</div>

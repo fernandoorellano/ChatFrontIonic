@@ -1,0 +1,79 @@
+<ion-content *ngIf="user$ | async as user; else tituloLogin">
+    <ion-grid class="chat">
+        <ion-row>
+            <div *ngFor="let men of valorGet">
+                <ion-col size="9" class="other-message" *ngIf="men[0].nombre != authSvc.nombreEmail">
+                    <div class="datos">
+                        <b style="float: left;">
+                            {{men[0].nombre}}
+                        </b>
+                        <b style="float: right;">
+                            {{men[0].mensaje}}
+                        </b>
+                    </div>
+                    <br>                 
+                    <div class="time">
+                        <br>{{men[0].fecha | date : 'dd/M-HH:mm' }}
+                    </div>
+                </ion-col>
+                <ion-col size="9" class="my-message" *ngIf="men[0].nombre == authSvc.nombreEmail">
+                    <div class="my-datos">
+                        <b style="float: left;">
+                            {{men[0].nombre}}
+                        </b>
+                        <b style="float: right;">
+                            {{men[0].mensaje}}
+                        </b>
+                    </div>
+                    <br>
+                    <div class="my-time">
+                        {{men[0].fecha | date : 'dd/M-HH:mm' }}
+                    </div>
+                
+                    <div class="my-btns">
+                        <ion-icon name="trash" (click)="borrarValoresApi(men[1])"></ion-icon>
+                        <ion-icon name="brush-outline" (click)="editarValoresApi(men[0].mensaje, men[1])"></ion-icon>
+                    </div>
+                </ion-col>
+            </div>
+            <div class="footer"></div>
+        </ion-row>
+    </ion-grid>
+    <ion-footer>
+        <ion-toolbar>
+            <ion-row class="ion-align-items-center">
+                <ion-col size="10">
+                    <small>Dejanos tu comentario</small>
+                    <ion-textarea 
+                        autoGrow="true" 
+                        class="message-input" 
+                        rows="1" 
+                        maxLenght="500"
+                        [(ngModel)]="srvApi.mensaje"
+                        placeholder="Ingresa tu mensaje"
+                        >
+                    </ion-textarea>
+                    <small>{{srvApi.mensaje.length}}/{{200}}</small>
+                </ion-col>
+                <ion-col size="2">
+                    <ion-button expand="block" fill="clear" color="primary" class="msg-btn" (click)="enviarAlaBD()">
+                        <ion-icon name="send" slot="icon-only"></ion-icon>
+                    </ion-button>
+                </ion-col>
+            </ion-row>
+        </ion-toolbar>
+    </ion-footer> 
+
+</ion-content>
+      
+              
+<ng-template #tituloLogin>
+    <ion-row class="logout">
+        <ion-col>
+            <br><p>Todavia no estas logeado</p><br>
+            <p>Ya tenes una cuenta? <a routerLink="/login">Ingresá</a></p>
+        </ion-col>
+    </ion-row>
+</ng-template>
+
+<!-- <app-login2></app-login2> -->

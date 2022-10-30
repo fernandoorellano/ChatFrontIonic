@@ -1,0 +1,26 @@
+<ion-toolbar color="primary">
+  <!-- <ion-title>Inicio</ion-title> -->
+  <ion-buttons slot="end" *ngIf="user$ | async as user; else tituloLogin">
+    
+    <ion-button>
+      {{authSvc.nombreEmail}}
+    </ion-button>
+    |
+    <ion-button (click)="onLogout()">
+      Logout
+      <ion-icon name="power-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+
+  <ng-template #tituloLogin>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/registro']">
+        Registrar | 
+      </ion-button>
+      <ion-button [routerLink]="['/login']">
+        Login 
+      </ion-button>
+  </ion-buttons>
+  </ng-template>
+
+</ion-toolbar>
